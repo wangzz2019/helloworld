@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "ViewController.h"
 
 @interface SceneDelegate ()
 
@@ -22,12 +23,17 @@
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     self.window.frame=windowScene.coordinateSpace.bounds;
     
+    ViewController *vc=[[ViewController alloc] init];
+    
+    UINavigationController *navigationController=[[UINavigationController alloc] initWithRootViewController:vc];
+    
     UITabBarController *tabbarController =  [[UITabBarController alloc] init];
-    UIViewController *c1=[[UIViewController alloc] init];
-    c1.view.backgroundColor=[UIColor redColor];
-    c1.tabBarItem.title=@"news";
-    c1.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/page@2x.png"];
-    c1.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+    
+    //UIViewController *c1=[[UIViewController alloc] init];
+    //c1.view.backgroundColor=[UIColor redColor];
+    navigationController.tabBarItem.title=@"news";
+    navigationController.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/page@2x.png"];
+    navigationController.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
     
     UIViewController *c2=[[UIViewController alloc] init];
     c2.view.backgroundColor=[UIColor greenColor];
@@ -47,7 +53,7 @@
     c4.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/home@2x.png"];
     c4.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/home_selected@2x.png"];
     
-    [tabbarController setViewControllers:@[c1,c2,c3,c4]];
+    [tabbarController setViewControllers:@[navigationController,c2,c3,c4]];
     self.window.rootViewController=tabbarController;
     [self.window makeKeyAndVisible];
 }
