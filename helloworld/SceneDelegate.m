@@ -26,18 +26,26 @@
     UIViewController *c1=[[UIViewController alloc] init];
     c1.view.backgroundColor=[UIColor redColor];
     c1.tabBarItem.title=@"news";
+    c1.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/page@2x.png"];
+    c1.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
     
     UIViewController *c2=[[UIViewController alloc] init];
     c2.view.backgroundColor=[UIColor greenColor];
     c2.tabBarItem.title=@"video";
+    c2.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/video@2x.png"];
+    c2.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/video_selected@2x.png"];
     
     UIViewController *c3=[[UIViewController alloc] init];
     c3.view.backgroundColor=[UIColor yellowColor];
     c3.tabBarItem.title=@"recommandation";
+    c3.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/like@2x.png"];
+    c3.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/like_selected@2x.png"];
     
     UIViewController *c4=[[UIViewController alloc] init];
     c4.view.backgroundColor=[UIColor blueColor];
     c4.tabBarItem.title=@"setting";
+    c4.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/home@2x.png"];
+    c4.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/home_selected@2x.png"];
     
     [tabbarController setViewControllers:@[c1,c2,c3,c4]];
     self.window.rootViewController=tabbarController;
