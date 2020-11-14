@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		82A529CB2531CEE00067B9C3 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82A529CA2531CEE00067B9C3 /* icon.bundle */; };
+		B70E345A255BE39700C354DD /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E3459255BE39700C354DD /* GTVideoViewController.m */; };
 		B7277C1C251CEA6D00011B4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C1B251CEA6D00011B4B /* AppDelegate.m */; };
 		B7277C1F251CEA6D00011B4B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C1E251CEA6D00011B4B /* SceneDelegate.m */; };
 		B7277C22251CEA6D00011B4B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C21251CEA6D00011B4B /* ViewController.m */; };
@@ -19,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		82A529CA2531CEE00067B9C3 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
+		B70E3458255BE39700C354DD /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
+		B70E3459255BE39700C354DD /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
 		B7277C17251CEA6D00011B4B /* helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7277C1A251CEA6D00011B4B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B7277C1B251CEA6D00011B4B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 				B7277C28251CEA6E00011B4B /* LaunchScreen.storyboard */,
 				B7277C2B251CEA6E00011B4B /* Info.plist */,
 				B7277C2C251CEA6E00011B4B /* main.m */,
+				B70E3458255BE39700C354DD /* GTVideoViewController.h */,
+				B70E3459255BE39700C354DD /* GTVideoViewController.m */,
 			);
 			path = helloworld;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7277C22251CEA6D00011B4B /* ViewController.m in Sources */,
+				B70E345A255BE39700C354DD /* GTVideoViewController.m in Sources */,
 				B7277C1C251CEA6D00011B4B /* AppDelegate.m in Sources */,
 				B7277C2D251CEA6E00011B4B /* main.m in Sources */,
 				B7277C1F251CEA6D00011B4B /* SceneDelegate.m in Sources */,

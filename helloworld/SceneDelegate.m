@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "ViewController.h"
+#import "GTVideoViewController.h"
 
 @interface SceneDelegate()<UITabBarControllerDelegate>
 
@@ -37,11 +38,11 @@
     c1.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/page@2x.png"];
     c1.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
     
-    UIViewController *c2=[[UIViewController alloc] init];
-    c2.view.backgroundColor=[UIColor greenColor];
-    c2.tabBarItem.title=@"video";
-    c2.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/video@2x.png"];
-    c2.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/video_selected@2x.png"];
+    GTVideoViewController *videoController=[[GTVideoViewController alloc] init];
+//    c2.view.backgroundColor=[UIColor greenColor];
+//    c2.tabBarItem.title=@"video";
+//    c2.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/video@2x.png"];
+//    c2.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/video_selected@2x.png"];
     
     UIViewController *c3=[[UIViewController alloc] init];
     c3.view.backgroundColor=[UIColor yellowColor];
@@ -57,7 +58,7 @@
     
     tabbarController.delegate = self;
     
-    [tabbarController setViewControllers:@[vc,c2,c3,c4]];
+    [tabbarController setViewControllers:@[vc,videoController,c3,c4]];
     self.window.rootViewController=navigationController;
     [self.window makeKeyAndVisible];
 }
