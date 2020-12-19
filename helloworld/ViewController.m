@@ -6,6 +6,8 @@
 //
 
 #import "ViewController.h"
+#import "GTNormalTableViewCell.h"
+
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -80,18 +82,19 @@
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"id"];
+    GTNormalTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"id"];
     
     if (!cell){
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell=[[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Title - %@",@(indexPath.row)];
+//    cell.textLabel.text = [NSString stringWithFormat:@"Title - %@",@(indexPath.row)];
     
-    //UITableViewCell *cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
-    //cell.textLabel.text=@"Title";
-    cell.detailTextLabel.text=@"Subtitle";
-    cell.imageView.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
+//    UITableViewCell *cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+//    cell.textLabel.text=@"Title";
+//    cell.detailTextLabel.text=@"Subtitle";
+//    cell.imageView.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
+    [cell layoutTableViewCell];
     return cell;
     
 };

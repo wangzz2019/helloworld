@@ -8,6 +8,7 @@
 #import "SceneDelegate.h"
 #import "ViewController.h"
 #import "GTVideoViewController.h"
+#import "GTRecommendViewController.h"
 
 @interface SceneDelegate()<UITabBarControllerDelegate>
 
@@ -44,11 +45,8 @@
 //    c2.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/video@2x.png"];
 //    c2.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/video_selected@2x.png"];
     
-    UIViewController *c3=[[UIViewController alloc] init];
-    c3.view.backgroundColor=[UIColor yellowColor];
-    c3.tabBarItem.title=@"recommandation";
-    c3.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/like@2x.png"];
-    c3.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/like_selected@2x.png"];
+    GTRecommendViewController *recommendViewController=[[GTRecommendViewController alloc] init];
+    
     
     UIViewController *c4=[[UIViewController alloc] init];
     c4.view.backgroundColor=[UIColor blueColor];
@@ -58,7 +56,7 @@
     
     tabbarController.delegate = self;
     
-    [tabbarController setViewControllers:@[vc,videoController,c3,c4]];
+    [tabbarController setViewControllers:@[vc,videoController,recommendViewController,c4]];
     self.window.rootViewController=navigationController;
     [self.window makeKeyAndVisible];
 }
