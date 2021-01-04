@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
+#import "GTDetailViewController.h"
 
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -65,9 +66,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *uivc= [[UIViewController alloc] init];
-    uivc.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
-    [self.navigationController pushViewController:uivc animated:YES];
+//    UIViewController *uivc= [[UIViewController alloc] init];
+    GTDetailViewController *controller = [[GTDetailViewController alloc] init];
+    controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
+    [self.navigationController pushViewController:controller animated:YES];
 };
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

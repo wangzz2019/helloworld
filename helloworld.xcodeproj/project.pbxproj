@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		82A529CB2531CEE00067B9C3 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82A529CA2531CEE00067B9C3 /* icon.bundle */; };
 		B70E345A255BE39700C354DD /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E3459255BE39700C354DD /* GTVideoViewController.m */; };
+		B717BBDA25A2AF720014FA11 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B717BBD925A2AF720014FA11 /* GTDetailViewController.m */; };
 		B7277C1C251CEA6D00011B4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C1B251CEA6D00011B4B /* AppDelegate.m */; };
 		B7277C1F251CEA6D00011B4B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C1E251CEA6D00011B4B /* SceneDelegate.m */; };
 		B7277C22251CEA6D00011B4B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C21251CEA6D00011B4B /* ViewController.m */; };
@@ -24,6 +25,8 @@
 		82A529CA2531CEE00067B9C3 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		B70E3458255BE39700C354DD /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
 		B70E3459255BE39700C354DD /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
+		B717BBD825A2AF720014FA11 /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
+		B717BBD925A2AF720014FA11 /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 		B7277C17251CEA6D00011B4B /* helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7277C1A251CEA6D00011B4B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B7277C1B251CEA6D00011B4B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				B73B77EA256A60FE001966A7 /* GTRecommendViewController.m */,
 				B7AD164D258B5C720052C2EB /* GTNormalTableViewCell.h */,
 				B7AD164E258B5C720052C2EB /* GTNormalTableViewCell.m */,
+				B717BBD825A2AF720014FA11 /* GTDetailViewController.h */,
+				B717BBD925A2AF720014FA11 /* GTDetailViewController.m */,
 			);
 			path = helloworld;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B717BBDA25A2AF720014FA11 /* GTDetailViewController.m in Sources */,
 				B7AD164F258B5C720052C2EB /* GTNormalTableViewCell.m in Sources */,
 				B7277C22251CEA6D00011B4B /* ViewController.m in Sources */,
 				B70E345A255BE39700C354DD /* GTVideoViewController.m in Sources */,
