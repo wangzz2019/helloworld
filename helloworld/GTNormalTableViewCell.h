@@ -9,6 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol GTNormalTableViewCellDelegate <NSObject>
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton;
+@end
+
 @interface GTNormalTableViewCell : UITableViewCell
 - (void)layoutTableViewCell;
 @property(nonatomic, strong, readwrite) UILabel *titleLabel;
@@ -19,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong,readwrite) UIImageView *rightimageView;
 
 @property(nonatomic, strong, readwrite) UIButton *deleteButton;
+
+@property(nonatomic, weak, readwrite) id<GTNormalTableViewCellDelegate> delegate;
 
 @end
 

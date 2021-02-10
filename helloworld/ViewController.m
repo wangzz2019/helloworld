@@ -8,10 +8,11 @@
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
+#import "GTDeleteCellView.h"
 
-
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
+@property(nonatomic,strong,readwrite) UITableView *tableView;
+@property(nonatomic,strong,readwrite) NSMutableArray *dataArray;
 @end
 
 @interface TestView : UIView
@@ -21,7 +22,9 @@
 @implementation TestView
 - (instancetype) init{
     self=[super init];
-    if (self){}
+    if (self){
+        
+    }
     return self;
 };
 - (void)willMoveToSuperview:(nullable UIView *)newSuperview{
@@ -39,21 +42,32 @@
 @end
 
 @implementation ViewController
-
+- (instancetype) init{
+    self=[super init];
+    if (self){
+        _dataArray=@[].mutableCopy;
+        for (int i=0;i<5;i++){
+            [_dataArray addObject:@(i)];
+        }
+    }
+    return self;
+};
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[UIColor whiteColor];
-    UITableView *tbv=[[UITableView alloc] initWithFrame:self.view.bounds];
-    
-    tbv.dataSource=self;
-    tbv.delegate = self;
-    
+//    UITableView *tbv=[[UITableView alloc] initWithFrame:self.view.bounds];
+//    tbv.dataSource=self;
+//    tbv.delegate = self;
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _tableView.dataSource=self;
+    _tableView.delegate=self;
     
 //    TestView *tv=[[TestView alloc] init];
 //    tv.backgroundColor = [UIColor greenColor];
 //    tv.frame=CGRectMake(150, 150, 100, 100);
-    [self.view addSubview:tbv];
+    [self.view addSubview:_tableView];
+//    [self.view addSubview:tbv];
 //    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
 //    [tv addGestureRecognizer:tapGesture];
 //    [self.view addSubview:({
@@ -77,7 +91,8 @@
 };
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+//    return 20;
+    return _dataArray.count;
 };
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -88,6 +103,7 @@
     
     if (!cell){
         cell=[[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+        cell.delegate = self;
     }
     
 //    cell.textLabel.text = [NSString stringWithFormat:@"Title - %@",@(indexPath.row)];
@@ -109,5 +125,18 @@
 //    [self.navigationController pushViewController:vc animated:YES];
 //};
      
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton{
+//    NSLog(@"");
+    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
+    
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+    
+    __weak typeof(self) wself = self;
+    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
+        __strong typeof(self)strongSelf = wself;
+        [strongSelf.dataArray removeLastObject];
+        [self.tableView deleteRowsAtIndexPaths:@[[strongSelf.tableView indexPathForCell:tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+}
 
 @end

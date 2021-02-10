@@ -71,21 +71,24 @@
 }
 
 - (void)layoutTableViewCell{
-    self.titleLabel.text = @"geektimeIOS";
-    self.sourceLabel.text = @"geektimeSource";
+    self.titleLabel.text = @"IOS";
+    self.sourceLabel.text = @"Source";
     [self.sourceLabel sizeToFit];
-    self.commentLabel.text = @"geektimeLabel";
+    self.commentLabel.text = @"Label";
     [self.commentLabel sizeToFit];
     self.commentLabel.frame = CGRectMake(self.sourceLabel.frame.origin.x + self.sourceLabel.frame.size.width + 15, self.commentLabel.frame.origin.y, self.commentLabel.frame.size.width, self.commentLabel.frame.size.height);
     
-    self.timeLabel.text = @"geektimeTime";
+    self.timeLabel.text = @"Time";
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     self.rightimageView.image=[UIImage imageNamed:@"icon.bundle/timg.jpeg"];
 }
 
 - (void)deletebuttonClick{
-    NSLog(@"I click the button");
+//    NSLog(@"I click the button");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]){
+        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+    }
 }
 
 @end

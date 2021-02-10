@@ -18,6 +18,7 @@
 		B7277C2A251CEA6E00011B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7277C28251CEA6E00011B4B /* LaunchScreen.storyboard */; };
 		B7277C2D251CEA6E00011B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C2C251CEA6E00011B4B /* main.m */; };
 		B73B77EB256A60FE001966A7 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B77EA256A60FE001966A7 /* GTRecommendViewController.m */; };
+		B776EA3C25D27A4500F44688 /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B776EA3B25D27A4500F44688 /* GTDeleteCellView.m */; };
 		B7AD164F258B5C720052C2EB /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AD164E258B5C720052C2EB /* GTNormalTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		B7277C2C251CEA6E00011B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B73B77E9256A60FE001966A7 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
 		B73B77EA256A60FE001966A7 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
+		B776EA3A25D27A4500F44688 /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
+		B776EA3B25D27A4500F44688 /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
 		B7AD164D258B5C720052C2EB /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		B7AD164E258B5C720052C2EB /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +98,8 @@
 				B7AD164E258B5C720052C2EB /* GTNormalTableViewCell.m */,
 				B717BBD825A2AF720014FA11 /* GTDetailViewController.h */,
 				B717BBD925A2AF720014FA11 /* GTDetailViewController.m */,
+				B776EA3A25D27A4500F44688 /* GTDeleteCellView.h */,
+				B776EA3B25D27A4500F44688 /* GTDeleteCellView.m */,
 			);
 			path = helloworld;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B717BBDA25A2AF720014FA11 /* GTDetailViewController.m in Sources */,
+				B776EA3C25D27A4500F44688 /* GTDeleteCellView.m in Sources */,
 				B7AD164F258B5C720052C2EB /* GTNormalTableViewCell.m in Sources */,
 				B7277C22251CEA6D00011B4B /* ViewController.m in Sources */,
 				B70E345A255BE39700C354DD /* GTVideoViewController.m in Sources */,
