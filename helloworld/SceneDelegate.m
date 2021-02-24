@@ -6,7 +6,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
 
@@ -25,7 +25,7 @@
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     self.window.frame=windowScene.coordinateSpace.bounds;
     
-    ViewController *vc=[[ViewController alloc] init];
+    GTNewsViewController *vc=[[GTNewsViewController alloc] init];
     vc.tabBarItem.title=@"news";
     vc.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/page@2x.png"];
     vc.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
