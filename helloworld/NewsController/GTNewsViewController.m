@@ -9,10 +9,12 @@
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
 #import "GTDeleteCellView.h"
+#import "GTListLoader.h"
 
 @interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 @property(nonatomic,strong,readwrite) UITableView *tableView;
 @property(nonatomic,strong,readwrite) NSMutableArray *dataArray;
+@property(nonatomic,strong,readwrite) GTListLoader *listloader;
 @end
 
 
@@ -55,20 +57,20 @@
 	return self;
 };
 - (void)viewDidLoad {
-	[super viewDidLoad];
-	// Do any additional setup after loading the view.
-	self.view.backgroundColor=[UIColor whiteColor];
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.view.backgroundColor=[UIColor whiteColor];
 //    UITableView *tbv=[[UITableView alloc] initWithFrame:self.view.bounds];
 //    tbv.dataSource=self;
 //    tbv.delegate = self;
-	_tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-	_tableView.dataSource=self;
-	_tableView.delegate=self;
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _tableView.dataSource=self;
+    _tableView.delegate=self;
 
 //    TestView *tv=[[TestView alloc] init];
 //    tv.backgroundColor = [UIColor greenColor];
 //    tv.frame=CGRectMake(150, 150, 100, 100);
-	[self.view addSubview:_tableView];
+    [self.view addSubview:_tableView];
 //    [self.view addSubview:tbv];
 //    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
 //    [tv addGestureRecognizer:tapGesture];
@@ -79,6 +81,8 @@
 //        label.center=CGPointMake(self.view.frame.size.width/2,self.view.frame.size.height/2);
 //        label;
 //    })];
+    self.listloader = [[GTListLoader alloc] init];
+    [self.listloader loadListData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
