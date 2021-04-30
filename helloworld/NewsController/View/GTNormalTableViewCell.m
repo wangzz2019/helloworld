@@ -6,8 +6,10 @@
 //
 
 #import "GTNormalTableViewCell.h"
+#import "GTListitem.h"
 
 @implementation GTNormalTableViewCell
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -76,9 +78,10 @@
     return self;
 }
 
-- (void)layoutTableViewCell{
-    self.titleLabel.text = @"IOS";
-    self.sourceLabel.text = @"Source";
+- (void)layoutTableViewCellWithItem:(GTListItem *)item{
+    
+    self.titleLabel.text = item.v4;
+    self.sourceLabel.text = item.v5;
     [self.sourceLabel sizeToFit];
     self.commentLabel.text = @"Label";
     [self.commentLabel sizeToFit];
@@ -87,6 +90,7 @@
     self.timeLabel.text = @"Time";
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
+    
     self.rightimageView.image=[UIImage imageNamed:@"icon.bundle/timg.jpeg"];
 }
 

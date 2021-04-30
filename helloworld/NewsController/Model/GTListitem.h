@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  
  */
-@interface GTListitem : NSObject
+@interface GTListItem : NSObject
 
 @property(nonatomic,copy,readwrite) NSString *v4;
 @property(nonatomic,copy,readwrite) NSString *v5;

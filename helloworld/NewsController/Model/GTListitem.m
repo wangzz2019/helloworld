@@ -7,7 +7,7 @@
 
 #import "GTListitem.h"
 
-@implementation GTListitem
+@implementation GTListItem
 
 - (void)configWithDictionary:(NSDictionary *)dictionary {
 

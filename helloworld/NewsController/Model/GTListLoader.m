@@ -11,7 +11,7 @@
 
 @implementation GTListLoader
 
-- (void)loadListData{
+- (void)loadListDataWithFinishBlock:(GTListLoaderFinishBlock)finishBlock{
     NSString *urlString=@"http://34.85.6.93:8080/samplejson";
     NSURL *listURL=[NSURL URLWithString:urlString];
     
@@ -36,10 +36,15 @@
         NSArray *dataArray = [((NSDictionary *)jsonObj) objectForKey:@"key3"];
         NSMutableArray *listItemArray=@[].mutableCopy;
         for (NSDictionary *info in dataArray){
-            GTListitem *listItem = [[GTListitem alloc] init];
+            GTListItem *listItem = [[GTListItem alloc] init];
             [listItem configWithDictionary:info];
             [listItemArray addObject:listItem];
         }
+        dispatch_async(dispatch_get_main_queue(),^{
+            if (finishBlock){
+                finishBlock(error==nil,listItemArray.copy);
+            }
+        });
         
         NSLog(@"");
     }];
