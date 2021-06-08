@@ -80,6 +80,14 @@
 
 - (void)layoutTableViewCellWithItem:(GTListItem *)item{
     
+    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:item.v4];
+    
+    if (hasRead){
+        self.titleLabel.textColor=[UIColor greenColor];
+    }else{
+        self.titleLabel.textColor=[UIColor blackColor];
+    }
+    
     self.titleLabel.text = item.v4;
     self.sourceLabel.text = item.v5;
     [self.sourceLabel sizeToFit];

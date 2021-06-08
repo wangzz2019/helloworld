@@ -12,11 +12,17 @@
 @implementation GTListLoader
 
 - (void)loadListDataWithFinishBlock:(GTListLoaderFinishBlock)finishBlock{
+    
+    NSArray<GTListItem *> *listdata=[self _readDataFromLocal];
+    if (listdata){
+        finishBlock(YES, listdata);
+    }
+    
     NSString *urlString=@"http://34.85.6.93:8080/samplejson";
     NSURL *listURL=[NSURL URLWithString:urlString];
-    
+
 //    __unused NSURLRequest *listRequest=[NSURLRequest requestWithURL:listURL];
-    
+
 //    [[AFHTTPSessionManager manager] GET:@"http://34.85.6.93:8080/samplejson" parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //        NSLog(@"");
 //    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -24,8 +30,8 @@
 //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        NSLog(@"");
 //    }];
-    
-    
+
+
     NSURLSession *session = [NSURLSession sharedSession];
 
     __weak typeof(self) weakSelf=self;
@@ -33,7 +39,7 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSError *jsonError;
         id jsonObj=[NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        
+
 #warning check data type
         NSArray *dataArray = [((NSDictionary *)jsonObj) objectForKey:@"key3"];
         NSMutableArray *listItemArray=@[].mutableCopy;
@@ -48,13 +54,30 @@
                 finishBlock(error==nil,listItemArray.copy);
             }
         });
-        
+
         NSLog(@"");
     }];
 
     [dataTask resume];
 //    [self _getSandBoxPath];
     NSLog(@"");
+}
+
+#pragma mark - private method
+
+- (NSArray<GTListItem *> *)_readDataFromLocal{
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath=[pathArray firstObject];
+    NSString *listDataPath= [cachePath stringByAppendingPathComponent:@"GTData/list"];
+    
+    NSFileManager *fileManager =[NSFileManager defaultManager];
+    
+    NSData *readListData =[fileManager contentsAtPath:listDataPath];
+    id unarchiveObj=[NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [GTListItem class], nil] fromData:readListData error:nil];
+    if ([unarchiveObj isKindOfClass:[NSArray class]] && [unarchiveObj count] > 0){
+        return (NSArray<GTListItem *> *)unarchiveObj;
+    }
+    return nil;
 }
 
 - (void)_archiveListDataWithArray:(NSArray<GTListItem *> *)array{
@@ -74,10 +97,16 @@
     
     [fileManager createFileAtPath:listDataPath contents:listData attributes:nil];
     
-    NSData *readListData=[fileManager contentsAtPath:listDataPath];
-    id unarchiveObj=[NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [GTListItem class], nil] fromData:readListData error:nil];
+//    NSData *readListData=[fileManager contentsAtPath:listDataPath];
+//    id unarchiveObj=[NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [GTListItem class], nil] fromData:readListData error:nil];
     
-    NSLog(@"");
+//    [[NSUserDefaults standardUserDefaults] setObject:listData forKey:@"listData"];
+//
+//    NSData *testListdata=[[NSUserDefaults standardUserDefaults] dataForKey:@"listData"];
+    
+//    id unarchiveObj=[NSKeyedUnarchiver unarchivedObjectOfClasses:[NSSet setWithObjects:[NSArray class], [GTListItem class], nil] fromData:testListdata error:nil];
+//
+//    NSLog(@"");
     //search file
 //    BOOL fileExist = [fileManager fileExistsAtPath:listDataPath];
     

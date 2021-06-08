@@ -10,6 +10,7 @@
 #import "GTDetailViewController.h"
 #import "GTDeleteCellView.h"
 #import "GTListLoader.h"
+#import "GTListitem.h"
 
 @interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 @property(nonatomic,strong,readwrite) UITableView *tableView;
@@ -86,10 +87,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GTListItem *item = [self.dataArray objectAtIndex:indexPath.row];
 //    UIViewController *uivc= [[UIViewController alloc] init];
 	GTDetailViewController *controller = [[GTDetailViewController alloc] init];
 	controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
 	[self.navigationController pushViewController:controller animated:YES];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:item.v4];
 };
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
