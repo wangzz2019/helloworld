@@ -18,6 +18,7 @@
 		B7277C27251CEA6E00011B4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7277C26251CEA6E00011B4B /* Assets.xcassets */; };
 		B7277C2A251CEA6E00011B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7277C28251CEA6E00011B4B /* LaunchScreen.storyboard */; };
 		B7277C2D251CEA6E00011B4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7277C2C251CEA6E00011B4B /* main.m */; };
+		B73194D6269DB58C00358528 /* GTVideoCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73194D5269DB58C00358528 /* GTVideoCoverView.m */; };
 		B73B77EB256A60FE001966A7 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B73B77EA256A60FE001966A7 /* GTRecommendViewController.m */; };
 		B771543225EDC69C00E152F2 /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B771543125EDC69C00E152F2 /* GTListLoader.m */; };
 		B776EA3C25D27A4500F44688 /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B776EA3B25D27A4500F44688 /* GTDeleteCellView.m */; };
@@ -45,6 +46,8 @@
 		B7277C29251CEA6E00011B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7277C2B251CEA6E00011B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7277C2C251CEA6E00011B4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B73194D4269DB58C00358528 /* GTVideoCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoCoverView.h; sourceTree = "<group>"; };
+		B73194D5269DB58C00358528 /* GTVideoCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoCoverView.m; sourceTree = "<group>"; };
 		B73B77E9256A60FE001966A7 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
 		B73B77EA256A60FE001966A7 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
 		B771543025EDC69C00E152F2 /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		B7277C19251CEA6D00011B4B /* helloworld */ = {
 			isa = PBXGroup;
 			children = (
+				B73194D3269DA5AB00358528 /* VideoController */,
 				B77865AF25E65CA600F10A45 /* NewsController */,
 				82A529CA2531CEE00067B9C3 /* icon.bundle */,
 				B7277C1A251CEA6D00011B4B /* AppDelegate.h */,
@@ -106,6 +110,17 @@
 			path = helloworld;
 			sourceTree = "<group>";
 		};
+		B73194D3269DA5AB00358528 /* VideoController */ = {
+			isa = PBXGroup;
+			children = (
+				B70E3458255BE39700C354DD /* GTVideoViewController.h */,
+				B70E3459255BE39700C354DD /* GTVideoViewController.m */,
+				B73194D4269DB58C00358528 /* GTVideoCoverView.h */,
+				B73194D5269DB58C00358528 /* GTVideoCoverView.m */,
+			);
+			path = VideoController;
+			sourceTree = "<group>";
+		};
 		B77865AF25E65CA600F10A45 /* NewsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +128,6 @@
 				B7B0FF0B26036BA30065C7BA /* Controller */,
 				B7B0FF0A26036AB80065C7BA /* View */,
 				B7B0FF0926036AAD0065C7BA /* Model */,
-				B70E3458255BE39700C354DD /* GTVideoViewController.h */,
-				B70E3459255BE39700C354DD /* GTVideoViewController.m */,
 				B73B77E9256A60FE001966A7 /* GTRecommendViewController.h */,
 				B73B77EA256A60FE001966A7 /* GTRecommendViewController.m */,
 			);
@@ -275,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B717BBDA25A2AF720014FA11 /* GTDetailViewController.m in Sources */,
+				B73194D6269DB58C00358528 /* GTVideoCoverView.m in Sources */,
 				B776EA3C25D27A4500F44688 /* GTDeleteCellView.m in Sources */,
 				B7AD164F258B5C720052C2EB /* GTNormalTableViewCell.m in Sources */,
 				B7277C22251CEA6D00011B4B /* GTNewsViewController.m in Sources */,

@@ -56,7 +56,7 @@
     
     tabbarController.delegate = self;
     
-    [tabbarController setViewControllers:@[vc,videoController,recommendViewController,c4]];
+    [tabbarController setViewControllers:@[videoController,vc,recommendViewController,c4]];
     self.window.rootViewController=navigationController;
     [self.window makeKeyAndVisible];
 }

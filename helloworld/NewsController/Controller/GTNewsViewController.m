@@ -77,13 +77,13 @@
 //        label.center=CGPointMake(self.view.frame.size.width/2,self.view.frame.size.height/2);
 //        label;
 //    })];
-    self.listloader = [[GTListLoader alloc] init];
-    __weak typeof(self)wself = self;
-    [self.listloader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
-        __strong typeof(wself) strongSelf = wself;
-        strongSelf.dataArray=dataArray;
-        [strongSelf.tableView reloadData];
-    }];
+//    self.listloader = [[GTListLoader alloc] init];
+//    __weak typeof(self)wself = self;
+//    [self.listloader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
+//        __strong typeof(wself) strongSelf = wself;
+//        strongSelf.dataArray=dataArray;
+//        [strongSelf.tableView reloadData];
+//    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
