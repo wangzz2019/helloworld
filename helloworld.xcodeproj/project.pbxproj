@@ -24,6 +24,7 @@
 		B776EA3C25D27A4500F44688 /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B776EA3B25D27A4500F44688 /* GTDeleteCellView.m */; };
 		B7AD164F258B5C720052C2EB /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AD164E258B5C720052C2EB /* GTNormalTableViewCell.m */; };
 		B7B0FF0F26036C200065C7BA /* GTListitem.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B0FF0E26036C200065C7BA /* GTListitem.m */; };
+		B7BCECB9270C208800730DA6 /* GTVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BCECB8270C208800730DA6 /* GTVideoPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		B7AD164E258B5C720052C2EB /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		B7B0FF0D26036C200065C7BA /* GTListitem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListitem.h; sourceTree = "<group>"; };
 		B7B0FF0E26036C200065C7BA /* GTListitem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListitem.m; sourceTree = "<group>"; };
+		B7BCECB7270C208800730DA6 /* GTVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoPlayer.h; sourceTree = "<group>"; };
+		B7BCECB8270C208800730DA6 /* GTVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoPlayer.m; sourceTree = "<group>"; };
 		C6AEBADDA6EED61A040D4B6F /* Pods-helloworld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helloworld.debug.xcconfig"; path = "Target Support Files/Pods-helloworld/Pods-helloworld.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +120,8 @@
 				B70E3459255BE39700C354DD /* GTVideoViewController.m */,
 				B73194D4269DB58C00358528 /* GTVideoCoverView.h */,
 				B73194D5269DB58C00358528 /* GTVideoCoverView.m */,
+				B7BCECB7270C208800730DA6 /* GTVideoPlayer.h */,
+				B7BCECB8270C208800730DA6 /* GTVideoPlayer.m */,
 			);
 			path = VideoController;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				B7277C1C251CEA6D00011B4B /* AppDelegate.m in Sources */,
 				B7277C2D251CEA6E00011B4B /* main.m in Sources */,
 				B7277C1F251CEA6D00011B4B /* SceneDelegate.m in Sources */,
+				B7BCECB9270C208800730DA6 /* GTVideoPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
