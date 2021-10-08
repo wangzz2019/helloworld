@@ -18,7 +18,9 @@
         finishBlock(YES, listdata);
     }
     
-    NSString *urlString=@"http://34.85.6.93:8080/samplejson";
+//    NSString *urlString=@"http://34.85.6.93:8080/samplejson";
+    
+    NSString *urlString=@"https://static001.geekbang.org/univer/classes/ios_dev/lession/45/toutiao.json";
     NSURL *listURL=[NSURL URLWithString:urlString];
 
 //    __unused NSURLRequest *listRequest=[NSURLRequest requestWithURL:listURL];
@@ -41,7 +43,8 @@
         id jsonObj=[NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
 #warning check data type
-        NSArray *dataArray = [((NSDictionary *)jsonObj) objectForKey:@"key3"];
+        NSArray *dataArray = [((NSDictionary *)[((NSDictionary *)jsonObj) objectForKey:@"result"]) objectForKey:@"data"];
+        
         NSMutableArray *listItemArray=@[].mutableCopy;
         for (NSDictionary *info in dataArray){
             GTListItem *listItem = [[GTListItem alloc] init];

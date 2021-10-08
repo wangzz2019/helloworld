@@ -7,6 +7,7 @@
 
 #import "GTVideoViewController.h"
 #import "GTVideoCoverView.h"
+#import "GTVideoToolbar.h"
 
 @interface GTVideoViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -34,7 +35,7 @@
     
     flowLayout.minimumLineSpacing=10;
     flowLayout.minimumInteritemSpacing=10;
-    flowLayout.itemSize=CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width / 16 * 9);
+    flowLayout.itemSize=CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width / 16 * 9 + GTVideoToolbarHeigh);
     
     collectionView.delegate=self;
     collectionView.dataSource=self;

@@ -28,7 +28,9 @@
 - (instancetype) init {
 	self=[super init];
 	if (self) {
-
+//        self.tabBarItem.title = @"news";
+//                self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+//                self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
 	}
 	return self;
 };
@@ -49,7 +51,11 @@
 @implementation GTNewsViewController
 - (instancetype) init {
 	self=[super init];
-	
+    if (self) {
+            self.tabBarItem.title = @"news";
+            self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+            self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+        }
 	return self;
 };
 - (void)viewDidLoad {
@@ -77,13 +83,13 @@
 //        label.center=CGPointMake(self.view.frame.size.width/2,self.view.frame.size.height/2);
 //        label;
 //    })];
-//    self.listloader = [[GTListLoader alloc] init];
-//    __weak typeof(self)wself = self;
-//    [self.listloader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
-//        __strong typeof(wself) strongSelf = wself;
-//        strongSelf.dataArray=dataArray;
-//        [strongSelf.tableView reloadData];
-//    }];
+    self.listloader = [[GTListLoader alloc] init];
+    __weak typeof(self)wself = self;
+    [self.listloader loadListDataWithFinishBlock:^(BOOL success, NSArray<GTListItem *> * _Nonnull dataArray) {
+        __strong typeof(wself) strongSelf = wself;
+        strongSelf.dataArray=dataArray;
+        [strongSelf.tableView reloadData];
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,7 +99,7 @@
 	controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
 	[self.navigationController pushViewController:controller animated:YES];
     
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:item.v4];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:item.uniqueKey];
 };
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -33,11 +33,11 @@
     UITabBarController *tabbarController =  [[UITabBarController alloc] init];
     UINavigationController *navigationController=[[UINavigationController alloc] initWithRootViewController:tabbarController];
     
-    UIViewController *c1=[[UIViewController alloc] init];
-    c1.view.backgroundColor=[UIColor redColor];
-    c1.tabBarItem.title=@"news";
-    c1.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/page@2x.png"];
-    c1.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+//    UIViewController *c1=[[UIViewController alloc] init];
+//    c1.view.backgroundColor=[UIColor redColor];
+//    c1.tabBarItem.title=@"news";
+//    c1.tabBarItem.image=[UIImage imageNamed:@"icon.bundle/page@2x.png"];
+//    c1.tabBarItem.selectedImage=[UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
     
     GTVideoViewController *videoController=[[GTVideoViewController alloc] init];
 //    c2.view.backgroundColor=[UIColor greenColor];
@@ -56,7 +56,7 @@
     
     tabbarController.delegate = self;
     
-    [tabbarController setViewControllers:@[videoController,vc,recommendViewController,c4]];
+    [tabbarController setViewControllers:@[vc,videoController,recommendViewController,c4]];
     self.window.rootViewController=navigationController;
     [self.window makeKeyAndVisible];
 }
